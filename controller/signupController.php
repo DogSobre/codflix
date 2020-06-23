@@ -23,7 +23,7 @@ function signupPage()
 
 
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = hash(sha256, $_POST['password']);
 
     $userSignup = new user();
     $userSignup->setEmail($email);
