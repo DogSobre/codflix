@@ -59,12 +59,11 @@ class User {
   public function getPassword() {
     return $this->password;
   }
-
   /***********************************
   * -------- CREATE NEW USER ---------
   ************************************/
 
-  public function createUser() {
+  public function createUser($confirmKey) {
 
     // Open database connection
     $db   = init_db();
@@ -78,13 +77,15 @@ class User {
     // Insert new user
     $req->closeCursor();
 
-    $req  = $db->prepare( "INSERT INTO user ( email, password ) VALUES ( :email, :password )" );
+
+    $req  = $db->prepare( "INSERT INTO user ( email, password, confirmKey ) VALUES ( :email, :password, :confirmKey )" );
     $req->execute( array(
       'email'     => $this->getEmail(),
-      'password'  => $this->getPassword()
+      'password'  => $this->getPassword(),
+        'confirmKey'=>$confirmKey
     ));
 
-    // Close databse connection
+    // Close database connection
     $db = null;
 
   }
