@@ -122,6 +122,12 @@ ALTER TABLE `history`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `user`
+    ADD `confrimKey` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `user`
+    ADD `confirm` INT(1) NULL;
+
 --
 -- AUTO_INCREMENT for dumped tables
 --

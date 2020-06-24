@@ -13,11 +13,12 @@ class Media {
   protected $summary;
   protected $trailer_url;
 
-  public function __construct( $media ) {
+  public function __construct( $media )
+  {
 
-    $this->setId( isset( $media->id ) ? $media->id : null );
-    $this->setGenreId( $media->genre_id );
-    $this->setTitle( $media->title );
+      $this->setId(isset($media->id) ? $media->id : null);
+      $this->setGenreId($media->genre_id);
+      $this->setTitle($media->title);
   }
 
   /***************************
@@ -90,11 +91,13 @@ class Media {
 
   public static function filterMedias( $title ) {
 
+      $title = 'test';
+
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "SELECT * FROM media WHERE title = ? ORDER BY release_date DESC" );
-    $req->execute( array( '%' . $title . '%' ));
+    $req  = $db->prepare( "SELECT * FROM media ORDER BY release_date DESC" );
+    $req->execute();
 
     // Close databse connection
     $db   = null;

@@ -29,8 +29,6 @@ function signupPage()
     $userSignup->setEmail($email);
     $userSignup->setPassword($password);
 
-
-
     $header = 'From : <support@coding.com>' . '\n';
     $header .= 'Content-Type:text/html; charset="utf-8"' . '\n';
 
