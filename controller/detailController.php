@@ -5,12 +5,15 @@ require_once('model/media.php');
 function showDetail($id){
 
     //echo $_GET['id'];
-    echo $id;
+    //echo $id;
 
-    $search = isset( $_GET['titl'] ) ? $_GET['titl'] : null;
-    $medias = Media::filterMedias( $search );
+    $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
+    //$medias = Media::filterMedias( $search );
 
-    //require('view/mediaListView.php');
+    $medias = Media::mediaDetails($id);
 
+    require('view/detailView.php');
 
 }
+
+

@@ -89,9 +89,7 @@ class Media {
   * -------- GET LIST --------
   ***************************/
 
-  public static function filterMedias( $title ) {
-
-      $title = 'test';
+  public static function filterMedias() {
 
     // Open database connection
     $db   = init_db();
@@ -103,6 +101,17 @@ class Media {
     $db   = null;
 
     return $req->fetchAll();
+
+  }
+
+  public static function mediaDetails($id){
+
+      $db = init_db();
+
+      $req = $db->prepare("SELECT * FROM media WHERE id= ? ");
+      $req->execute(array($id));
+
+      return $req->fetchAll();
 
   }
 

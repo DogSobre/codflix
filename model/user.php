@@ -82,7 +82,7 @@ class User {
     $req->execute( array(
       'email'     => $this->getEmail(),
       'password'  => $this->getPassword(),
-        'confirmKey'=>$confirmKey
+      'confirmKey'=> $confirmKey
     ));
 
     // Close database connection

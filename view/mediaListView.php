@@ -14,17 +14,21 @@
 </div>
 
 <div class="media-list">
-    <?php foreach( $medias as $media ): ?>
-        <a class="item" href="index.php?media=<?= $media['id']; ?>">
-            <div class="video">
-                <div>
-                    <iframe allowfullscreen="" frameborder="0"
-                            src="<?= $media['trailer_url']; ?>" ></iframe>
+    <!--<form method="post" action="index.php?media=test">-->
+        <?php foreach( $medias as $media ): ?>
+            <a class="item" href="index.php?media=<?= $media['id']; ?>">
+                <div class="video">
+                    <div>
+                        <iframe allowfullscreen="" frameborder="0"
+                                src="<?= $media['trailer_url']; ?>" >
+                        </iframe>
+                    </div>
                 </div>
-            </div>
-            <div class="title"><?= $media['title']; ?></div>
-        </a>
-    <?php endforeach; ?>
+                <div class="title"><?= $media['title']; ?></div>
+                <!--<div class="summary"><?= $media['short_summary']; ?></div>-->
+            </a>
+        <?php endforeach; ?>
+    </form>
 </div>
 
 

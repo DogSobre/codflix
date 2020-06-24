@@ -32,11 +32,18 @@ function signupPage()
     $header = 'From : <support@coding.com>' . '\n';
     $header .= 'Content-Type:text/html; charset="utf-8"' . '\n';
 
+
+    /*******************************
+     * --- Create new random key ---
+     *******************************/
     $keyLenght = 16;
     $key ='';
     for ($i=1;$i<$keyLenght;$i++){
         $key .= mt_rand(0, 9);
     }
+
+
+//////////////////////////
 
     $message = '
     <html>

@@ -42,7 +42,9 @@ else:
 
   if( $user_id ):
       if ($_GET['media']){
+          //showDetail($_GET['media']);
           showDetail($_GET['media']);
+
       }else{
           mediaPage();
       }
