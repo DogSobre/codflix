@@ -26,6 +26,7 @@
                 </div>
                 <div class="title"><?= $media['title']; ?></div>
                 <div class="summary"><?= $media['short_summary']; ?></div>
+                <div class="duration"><?= $media['duration']; ?></div>
             </a>
         <?php endforeach; ?>
         </form>

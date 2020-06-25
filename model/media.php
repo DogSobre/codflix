@@ -94,7 +94,7 @@ class Media {
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "SELECT * FROM media ORDER BY release_date DESC" );
+    $req  = $db->prepare( "SELECT * FROM media GROUP BY title DESC " );
     $req->execute();
 
     // Close databse connection
@@ -108,7 +108,8 @@ class Media {
 
       $db = init_db();
 
-      $req = $db->prepare("SELECT * FROM media WHERE id= ? ");
+
+      $req = $db->prepare("SELECT * FROM media WHERE id= ?");
       $req->execute(array($id));
 
       return $req->fetchAll();

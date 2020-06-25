@@ -57,3 +57,19 @@
         flex-basis: 100%;
     }
 }
+
+.media-list .item .duration {
+    color: #fff;
+    font-weight: bold;
+
+    padding: 8px 20px;
+    text-align: center;
+}
+
+.media-list .item .status {
+    color: #fff;
+    font-weight: bold;
+
+    padding: 8px 20px;
+    text-align: center;
+}
