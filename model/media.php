@@ -108,12 +108,11 @@ class Media {
 
       $db = init_db();
 
-
-      $req = $db->prepare("SELECT * FROM media WHERE id= ?");
-      $req->execute(array($id));
+      $req = $db->prepare("SELECT * FROM media WHERE title LIKE ? ");
+      $req->execute(array('%'. $id . '%'));
 
       return $req->fetchAll();
 
   }
-
 }
+// SELECT * FROM media WHERE title = "Rick & Morty"
